@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - "main"
+
+env:
+  IMAGE_NAME: welcome
     
 jobs:
   build:
@@ -28,4 +31,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/welcome
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.IMAGE_NAME }}:latest
