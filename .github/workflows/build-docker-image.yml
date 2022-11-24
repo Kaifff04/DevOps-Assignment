@@ -32,4 +32,5 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_KAIF_USERNAME }}${{ env.IMAGE_NAME }}:latest
+          tags: latest
+          username: ${{ secrets.DOCKER_KAIF_USERNAME }}
