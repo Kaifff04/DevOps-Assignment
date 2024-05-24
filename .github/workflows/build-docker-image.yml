@@ -31,3 +31,10 @@ jobs:
           echo "$password" | docker login -u "$username" --password-stdin
           docker image build -t $username/$IMAGE_NAME:v1 .
           docker push $username/$IMAGE_NAME:v1
+
+      - name: Trigger next workflow using Repository Dispatch
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.GIT_TOKEN }}
+          repository: Kaifff04/DevOps-Assignment
+          event-type: custom-event
