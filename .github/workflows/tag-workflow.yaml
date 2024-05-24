@@ -5,7 +5,7 @@ on:
   repository_dispatch:
     types: [custom-event]
 env:
-  IMAGE_NAME: print 
+  IMAGE_NAME: welcome 
   DOC_USER: ${{ secrets.DOCKER_KAIF_USERNAME }}
   DOC_PASS: ${{ secrets.DOCKER_KAIF_PASSWORD }}
 jobs:
